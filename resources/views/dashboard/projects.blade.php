@@ -24,22 +24,22 @@
                     <div class="table-responsive mb-4">
                         <table class="table table-hover js-basic-example dataTable table_custom spacing5">
                             <thead>
-                                    <tr>
+                                <tr>
                                         <th width="10%">#</th>
                                         <th width="20%">صورة المشروع</th>
                                         <th width="20%">إسم المشروع</th>
-                                        <th width="30%">تفاصيل المشروع</th>
+                                        <th width="30%">نوع المشروع</th>
                                         <th width="20%">عمليات</th>
-                                    </tr>
+                                </tr>
                             </thead>
                             <tfoot>
-                                    <tr>
+                                <tr>
                                         <th>#</th>
                                         <th>صورة المشروع</th>
                                         <th>إسم المشروع</th>
-                                        <th>تفاصيل المشروع</th>
+                                        <th>نوع المشروع</th>
                                         <th>عمليات</th>
-                                    </tr>
+                                </tr>
                             </tfoot>
                             <tbody>
                                     @if (count($projects)==0)
@@ -54,7 +54,7 @@
                                                     <a href="{{asset('uploads/projects/'.$project->image)}}" target="_blank"><img src="{{asset('uploads/projects/'.$project->image)}}" width="100px" /></a>
                                                 </td>
                                                 <td>{{$project->name}}</td>
-                                                <td>{{$project->description}}</td>
+                                                <td>{{$project->type}}</td>
                                                 <td>
                                                    <button type="button" data-id="{{$project->id}}" class="btn btn-success" data-toggle="modal" data-target="#editModalproject">تعديل</button>
                                                    <button type="button" data-id="{{$project->id}}" class="btn btn-danger" data-toggle="modal" data-target="#deleteModalproject">حذف</button>
@@ -75,7 +75,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">حذف خدمة</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">حذف المشروع</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -100,7 +100,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">تعديل خدمة</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">تعديل بيانات المشروع</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -113,17 +113,18 @@
                                 <label class="form-label">صورة المشروع</label>
                                 <input type="file" class="form-control image" name="image">
                             </div>
+                            <div class="form-group mb-0">
+                                <label class="form-label">نوع المشروع</label>
+                                <input type="text" class="form-control" name="type" />
+                            </div>
                             <div class="form-group">
-                                <img src="{{asset('uploads/projects/default.jpg')}}" width="100px" class="img-thumbnail image-preview">
+                                <img src="{{asset('uploads/projects/default.png')}}" width="100px" class="img-thumbnail image-preview">
                             </div>
                             <div class="form-group mb-0">
                                 <label class="form-label">إسم المشروع</label>
                                 <input type="text" class="form-control" name="name" />
                             </div>
-                            <div class="form-group mb-0">
-                                <label class="form-label">تفاصيل المشروع</label>
-                                <textarea class="form-control" rows="5" name="description"></textarea>
-                            </div>
+
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success">تعديل البيانات</button>
@@ -139,7 +140,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">إضافة خدمة جديدة</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">إضافة مشروع جديد</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -153,15 +154,15 @@
                                 <input type="text" class="form-control" name="name" />
                             </div>
                             <div class="form-group">
+                                <label class="form-label">نوع المشروع</label>
+                                <input type="text" class="form-control" name="type" />
+                            </div>
+                            <div class="form-group">
                                 <label class="form-label">صورة المشروع</label>
                                 <input type="file" class="form-control image" name="image">
                             </div>
                             <div class="form-group">
-                                <img src="{{asset('uploads/projects/default.jpg')}}" width="100px" class="img-thumbnail image-preview">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">تفاصيل المشروع</label>
-                                <textarea class="form-control" rows="5" name="description"></textarea>
+                                <img src="{{asset('uploads/projects/default.png')}}" width="100px" class="img-thumbnail image-preview">
                             </div>
                     </div>
                     <div class="modal-footer">

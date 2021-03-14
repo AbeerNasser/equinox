@@ -40,7 +40,7 @@
                                 </div>
                                 <a href="{{url('Dashboard/clients')}}" class="my_sort_cut text-muted">
                                     <i class="icon-users"></i>
-                                    <span>العملاء</span>
+                                    <span>المديرين</span>
                                 </a>
                             </div>
                         </div>

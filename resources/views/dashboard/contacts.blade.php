@@ -1,6 +1,6 @@
 ﻿@extends('layouts.dashboard')
 
-@section('title', 'العملاء')
+@section('title', 'رسائل التواصل')
 @section('content')
 
         <div class="section-body">

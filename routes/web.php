@@ -11,12 +11,11 @@ Auth::routes(['register'=>false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::prefix('Dashboard')->middleware(['auth'])->group(function()
-// {
-//     Route::resource('/clients', 'dashboard\ClientController');
-//     Route::resource('/projects', 'dashboard\ProjectController');
-//     Route::resource('/offers', 'dashboard\OfferController');
-//     Route::get('/activeOffer/{id}', 'dashboard\OfferController@activeOffer');
-//     Route::resource('/services', 'dashboard\ServiceController');
-//     Route::resource('/settings', 'dashboard\settingController');
-// });
+Route::prefix('Dashboard')->middleware(['auth'])->group(function()
+{
+    Route::resource('/projects', 'dashboard\ProjectController');
+    Route::resource('/services', 'dashboard\ServiceController');
+    Route::resource('/news', 'dashboard\ContactController');
+    Route::resource('/contacts', 'dashboard\ServiceController');
+    Route::resource('/leaders', 'dashboard\LeaderController');
+});

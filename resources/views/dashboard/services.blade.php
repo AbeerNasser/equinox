@@ -51,7 +51,7 @@
                                             <tr>
                                                 <td>{{$service->id}}</td>
                                                 <td>
-                                                    <a href="{{asset('uploads/sevicesimg/'.$service->image)}}" target="_blank"><img src="{{asset('uploads/sevicesimg/'.$service->image)}}" width="100px" /></a>
+                                                    <a href="{{asset('uploads/sevicesimg/'.$service->logo)}}" target="_blank"><img src="{{asset('uploads/sevicesimg/'.$service->logo)}}" width="100px" /></a>
                                                 </td>
                                                 <td>{{$service->title}}</td>
                                                 <td>{{$service->description}}</td>
@@ -114,7 +114,7 @@
                             <input type="file" class="form-control image" name="image">
                         </div>
                         <div class="form-group">
-                            <img src="{{asset('uploads/clients/default.jpg')}}" width="100px" class="img-thumbnail image-preview">
+                            <img src="{{asset('uploads/sevicesimg/default.png')}}" width="100px" class="img-thumbnail image-preview">
                         </div>
                             <div class="form-group mb-0">
                                 <label class="form-label">إسم الخدمة</label>
@@ -157,7 +157,7 @@
                                 <input type="file" class="form-control image" name="image">
                             </div>
                             <div class="form-group">
-                                <img src="{{asset('uploads/clients/default.jpg')}}" width="100px" class="img-thumbnail image-preview">
+                                <img src="{{asset('uploads/sevicesimg/default.png')}}" width="100px" class="img-thumbnail image-preview">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">تفاصيل الخدمة</label>
