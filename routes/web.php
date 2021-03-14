@@ -18,4 +18,5 @@ Route::prefix('Dashboard')->middleware(['auth'])->group(function()
     Route::resource('/news', 'dashboard\ContactController');
     Route::resource('/contacts', 'dashboard\ServiceController');
     Route::resource('/leaders', 'dashboard\LeaderController');
+    Route::resource('/users', 'dashboard\UsersController');
 });

@@ -318,12 +318,25 @@
             $('#deleteUserModal').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget);
                 var id = button.data('id');
-                $('#deleteForm').attr("action", "{{url('Dashboard/clients')}}" + "/" + id);
+                $('#deleteForm').attr("action", "{{url('Dashboard/users')}}" + "/" + id);
             });
             $('#editUserModal').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget);
                 var id = button.data('id');
-                $('#editForm').attr("action", "{{url('Dashboard/clients')}}" + "/" + id);
+                $('#editForm').attr("action", "{{url('Dashboard/users')}}" + "/" + id);
+            });
+
+            // leader
+            $('#deleteModalleader').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var id = button.data('id');
+                $('#deleteForm').attr("action", "{{url('Dashboard/leaders')}}" + "/" + id);
+             });
+             $('#editModalleader').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var id = button.data('id');
+                console.log(id);
+                $('#editForm').attr("action","{{url('Dashboard/leaders') }}" + "/" + id);
             });
 
             // project
@@ -350,24 +363,6 @@
                 var id = button.data('id');
                 console.log(id);
                 $('#editForm').attr("action","{{url('Dashboard/services') }}" + "/" + id);
-            });
-
-            //Offers
-            $('#deleteOfferModal').on('show.bs.modal', function (event) {
-                var button = $(event.relatedTarget);
-                var id = button.data('id');
-                $('#deleteForm').attr("action", "{{url('Dashboard/offers')}}" + "/" + id);
-            });
-            $('#disableOfferModal').on('show.bs.modal', function (event) {
-                var button = $(event.relatedTarget);
-                var id = button.data('id');
-                $('#activeForm').attr("action", "{{url('Dashboard/activeOffer')}}" + "/" + id);
-            });
-            $('#editOfferModal').on('show.bs.modal', function (event) {
-                var button = $(event.relatedTarget);
-                var id = button.data('id');
-                console.log(id);
-                $('#editForm').attr("action","{{url('Dashboard/offers') }}" + "/" + id);
             });
 
             //image preview

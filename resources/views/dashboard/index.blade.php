@@ -38,7 +38,7 @@
                                 <div class="ribbon-box green counter">20
                                     {{-- {{$clients}} --}}
                                 </div>
-                                <a href="{{url('Dashboard/clients')}}" class="my_sort_cut text-muted">
+                                <a href="{{url('Dashboard/leaders')}}" class="my_sort_cut text-muted">
                                     <i class="icon-users"></i>
                                     <span>المديرين</span>
                                 </a>
@@ -49,11 +49,11 @@
                         <div class="card">
                             <div class="card-body ribbon">
                                 <div class="ribbon-box green counter">40
-                                    {{-- {{$offers}} --}}
+                                    {{-- {{$users}} --}}
                                 </div>
-                                <a href="{{url('Dashboard/offers')}}" class="my_sort_cut text-muted">
-                                    <i class="fa fa-gift"></i>
-                                    <span>العروض</span>
+                                <a href="{{url('Dashboard/users')}}" class="my_sort_cut text-muted">
+                                    <i class="fa fa-users"></i>
+                                    <span>المشرفين</span>
                                 </a>
                             </div>
                         </div>
