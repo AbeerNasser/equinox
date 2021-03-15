@@ -16,7 +16,7 @@ class CreateLeadersTable extends Migration
         Schema::create('leaders', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('photo')->default('http://via.placeholder.com/200x200?text=No+Image');
+            $table->string('photo')->default('default.png');
             $table->text('description');
             $table->timestamps();
         });

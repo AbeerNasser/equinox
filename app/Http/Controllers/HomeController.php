@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Service;
+use App\Models\Leader;
+use App\Models\Newe;
+use App\Models\Project;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +28,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard/index');
+        $services=Service::count();
+        $leaders=Leader::count();
+        $users=User::count();
+        $newes=Newe::count();
+        $projects=Project::count();
+
+        return view('dashboard/index')->with(['services'=>$services,'users'=>$users,'leaders'=>$leaders,'newes'=>$newes,'projects'=>$projects]);
     }
 }

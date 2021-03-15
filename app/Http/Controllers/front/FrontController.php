@@ -1,17 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\dashboard;
+namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Contact;
 
-class ContactController extends Controller
+class FrontController extends Controller
 {
     public function index()
     {
-        $contacts=Contact::with('subject')->get();
-        return view('dashboard/contacts',compact('contacts'));
+        return view('front/index');
     }
 
     public function create()

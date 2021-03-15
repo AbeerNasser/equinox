@@ -4,8 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta name="author" content="Sedra Technology">
-
-        <link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon"/>
+        <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}">
         <title> @yield('title') </title>
 
         <!-- Bootstrap Core and vandor -->
@@ -52,7 +51,6 @@
                             <a href="javascript:void(0)" class="nav-link user_btn"><img class="avatar" src="../assets/images/user.png" alt=""/></a>
                             <a href="{{url('/home')}}" class="nav-link icon"><i class="fa fa-home"></i></a>
                             <a href="{{url('Dashboard/clients')}}"  class="nav-link icon app_inbox"><i class="fa fa-users"></i></a>
-                            <a href="{{url('Dashboard/offers')}}"  class="nav-link icon xs-hide"><i class="fa fa-gift"></i></a>
                             <a href="{{url('Dashboard/projects')}}"  class="nav-link icon app_file xs-hide"><i class="fa fa-university"></i></a>
                         </div>
                     </div>
@@ -82,7 +80,7 @@
             <!-- start Main menu -->
             <div id="left-sidebar" class="sidebar">
                 <div class="d-flex justify-content-between brand_name">
-                    <h5 class="brand-name">تطبيق سِدره</h5>
+                    <h5 class="brand-name">تطبيق EQUINOX</h5>
                     <div class="theme_btn">
                         <a class="theme1" data-toggle="tooltip" title="التصميم الأحمر" href="#" onclick="setStyleSheet('../assets/css/theme1.css', 0);"></a>
                         <a class="theme2" data-toggle="tooltip" title="التصميم الأخضر" href="#" onclick="setStyleSheet('../assets/css/theme2.css', 0);"></a>
@@ -118,13 +116,19 @@
                                     <a href="{{url('Dashboard/services')}}"><i class="fa fa-cube"></i><span data-hover="الخدمات">الخدمات</span></a>
                                 </li>
                                 <li>
-                                    <a href="{{url('Dashboard/clients')}}"><i class="fa fa-users"></i><span data-hover="العملاء">العملاء</span></a>
+                                    <a href="{{url('Dashboard/leaders')}}"><i class="fa fa-users"></i><span data-hover="المديرين">المديرين</span></a>
                                 </li>
-
-                                <li class="g_heading">الإدارة والتقارير</li>
-
                                 <li>
-                                <a href="{{url('Dashboard/settings')}}"><i class="fa fa-cogs"></i><span data-hover="الإعدادات">الإعدادات</span></a>
+                                    <a href="{{url('Dashboard/users')}}"><i class="fa fa-user-secret" aria-hidden="true"></i><span data-hover="المشرفين">المشرفين</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{url('Dashboard/newes')}}"><i class="fa fa-newspaper-o" aria-hidden="true"></i><span data-hover="الاخبار">الاخبار</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{url('Dashboard/subjects')}}"><i class="fa fa-sticky-note" aria-hidden="true"></i><span data-hover="الموضوعات">الموضوعات</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{url('Dashboard/contacts')}}"><i class="fa fa-comments" aria-hidden="true"></i><span data-hover="الرسائل">الرسائل</span></a>
                                 </li>
 
                             </ul>
@@ -257,7 +261,7 @@
                     <div class="container-fluid">
                         <div class="page-header">
                             <div class="left">
-                                <h1 class="page-title"> تطبيق سدرة</h1>
+                                <h1 class="page-title"> تطبيق EQUINOX</h1>
                             </div>
                             <div class="right">
                                 <div class="notification d-flex">
@@ -285,7 +289,7 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12">
-                                    جميع الحقوق محفوظة © 2021 تطبيق سدرة, تطوير  <a href="https://sedrait.com" target="_blank">شركة سِدره للبرمجيات</a>.
+                                    جميع الحقوق محفوظة © 2021 تطبيق EQUINOX, تطوير  <a href="https://sedrait.com" target="_blank">شركة سِدره للبرمجيات</a>.
                                 </div>
                             </div>
                         </div>
@@ -319,8 +323,8 @@
                 var button = $(event.relatedTarget);
                 var id = button.data('id');
                 $('#deleteForm').attr("action", "{{url('Dashboard/users')}}" + "/" + id);
-            });
-            $('#editUserModal').on('show.bs.modal', function (event) {
+             });
+             $('#editUserModal').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget);
                 var id = button.data('id');
                 $('#editForm').attr("action", "{{url('Dashboard/users')}}" + "/" + id);
@@ -351,6 +355,18 @@
                 console.log(id);
                 $('#editForm').attr("action","{{url('Dashboard/projects') }}" + "/" + id);
             });
+            // newes
+            $('#deleteModalnewe').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var id = button.data('id');
+                $('#deleteForm').attr("action", "{{url('Dashboard/newes')}}" + "/" + id);
+             });
+             $('#editModalnewe').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var id = button.data('id');
+                console.log(id);
+                $('#editForm').attr("action","{{url('Dashboard/newes') }}" + "/" + id);
+            });
 
             // services
             $('#deleteModalservice').on('show.bs.modal', function (event) {
@@ -365,6 +381,18 @@
                 $('#editForm').attr("action","{{url('Dashboard/services') }}" + "/" + id);
             });
 
+            // subjects
+            $('#deleteSubjModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var id = button.data('id');
+                $('#deleteForm').attr("action", "{{url('Dashboard/subjects')}}" + "/" + id);
+             });
+             $('#editSubjModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var id = button.data('id');
+                console.log(id);
+                $('#editForm').attr("action","{{url('Dashboard/subjects') }}" + "/" + id);
+            });
             //image preview
             $(".image").change(function() {
                 if (this.files && this.files[0]) {

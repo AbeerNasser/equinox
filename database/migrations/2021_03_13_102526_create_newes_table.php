@@ -16,7 +16,8 @@ class CreateNewesTable extends Migration
         Schema::create('newes', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('image')->default('http://via.placeholder.com/200x200?text=No+Image');
+            $table->string('image')->default('default.png');
+             $table->text('description')->nullable();
             $table->foreignId('user_id')->constrained()->nullable();
             $table->timestamps();
         });

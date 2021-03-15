@@ -11,8 +11,6 @@
                     </div>
                 @endif
 
-                <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#addUserModal">إضافة مستخدم جديد</button><br />
-
                 <div class="row clearfix">
                     <div class="col-lg-12">
                         <div class="table-responsive mb-4">

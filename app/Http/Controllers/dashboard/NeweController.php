@@ -4,82 +4,80 @@ namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
+use Storage;
+use App\Models\Newe;
 
 class NeweController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $newes=Newe::with('user')->get();
+        return view('dashboard/newes',compact('newes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'image'=>'image',
+            'title'=>'required'
+        ]);
+        $data=$request->except('image');
+        if($request->image){
+            Image::make($request->image)->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('uploads/newes/'.$request->image->hashName()));
+            $data['image']=$request->image->hashName();
+        }
+        Newe::create($data);
+        return back()->with('status','تم الاضافة بنجاح');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $neweimag= Newe::find($id);
+        $request->validate([
+            'image'=>'image',
+            'title'=>'required'
+        ]);
+        $data=$request->except(['_token','_method','image']);
+        if($request->image){
+            if($neweimag->image != 'default.png'){
+                Storage::disk('public_uploads')->delete('/newes/'.$neweimag->image);
+            }
+            Image::make($request->image)->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('uploads/newes/'.$request->image->hashName()));
+            $data['image']=$request->image->hashName();
+        }
+        $services = Newe::where('id', '=', $id)->update($data);
+
+        return back()->with('status','تم التعديل بنجاح');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $neweimag = Newe::find($id);
+        if($neweimag->image != 'default.png'){
+            Storage::disk('public_uploads')->delete('/newes/'.$neweimag->image);
+        }
+        $neweimag->delete();
+
+        return back()->with('status','تم الحذف بنجاح');
     }
 }

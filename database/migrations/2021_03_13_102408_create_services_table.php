@@ -11,7 +11,7 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('logo')->default('http://via.placeholder.com/200x200?text=No+Image');
+            $table->string('logo')->default('default.png');
             $table->text('description');
             $table->timestamps();
         });

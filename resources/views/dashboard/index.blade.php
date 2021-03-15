@@ -9,7 +9,7 @@
                     <div class="col-lg-12">
                         <div class="mb-4">
                             <h2>رئيسية لوحة تحكم النظام</h2>
-                            <small>الصفحة الرئيسية للوحة تحكم نظام تطبيق سدره</small>
+                            <small>الصفحة الرئيسية للوحة تحكم نظام تطبيق EQUINOX</small>
                         </div>
                     </div>
                 </div>
@@ -22,8 +22,8 @@
                     <div class="col-6 col-md-4 col-xl-2">
                         <div class="card">
                             <div class="card-body ribbon">
-                                <div class="ribbon-box green counter">100
-                                    {{-- {{$projects}} --}}
+                                <div class="ribbon-box green counter">
+                                    {{$projects}}
                                 </div>
                                 <a href="{{url('Dashboard/projects')}}" class="my_sort_cut text-muted">
                                     <i class="icon-layers"></i>
@@ -35,8 +35,8 @@
                     <div class="col-6 col-md-4 col-xl-2">
                         <div class="card">
                             <div class="card-body ribbon">
-                                <div class="ribbon-box green counter">20
-                                    {{-- {{$clients}} --}}
+                                <div class="ribbon-box green counter">
+                                    {{$leaders}}
                                 </div>
                                 <a href="{{url('Dashboard/leaders')}}" class="my_sort_cut text-muted">
                                     <i class="icon-users"></i>
@@ -48,8 +48,8 @@
                     <div class="col-6 col-md-4 col-xl-2">
                         <div class="card">
                             <div class="card-body ribbon">
-                                <div class="ribbon-box green counter">40
-                                    {{-- {{$users}} --}}
+                                <div class="ribbon-box green counter">
+                                    {{$users}}
                                 </div>
                                 <a href="{{url('Dashboard/users')}}" class="my_sort_cut text-muted">
                                     <i class="fa fa-users"></i>
@@ -61,12 +61,25 @@
                     <div class="col-6 col-md-4 col-xl-2">
                         <div class="card">
                             <div class="card-body ribbon">
-                                <div class="ribbon-box green counter">10
-                                    {{-- {{$services}} --}}
+                                <div class="ribbon-box green counter">
+                                    {{$services}}
                                 </div>
                                 <a class="my_sort_cut text-muted" href="{{url('Dashboard/services')}}">
                                     <i class="icon-globe"></i>
                                     <span>الخدمات</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-xl-2">
+                        <div class="card">
+                            <div class="card-body ribbon">
+                                <div class="ribbon-box green counter">
+                                    {{$newes}}
+                                </div>
+                                <a class="my_sort_cut text-muted" href="{{url('Dashboard/newes')}}">
+                                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                    <span>الاخبار</span>
                                 </a>
                             </div>
                         </div>

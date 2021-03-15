@@ -17,7 +17,7 @@ class CreateProjectsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('type');
-            $table->string('image')->default('http://via.placeholder.com/200x200?text=No+Image');
+            $table->string('image')->default('default.png');
             $table->timestamps();
         });
     }
