@@ -4,12 +4,12 @@ use Illuminate\Support\Facades\Route;
 
 //
     Route::resource('/', 'front\FrontController');
-    // Route::get('/project', 'front\FrontController');
-
-    // Route::get('/service', 'front\FrontController');
-    // Route::get('/news', 'front\FrontController');
-    // // Route::post('/contact', 'front\ContactController');
-    // Route::get('/leader', 'front\FrontController');
+    Route::get('/project', 'front\FrontController@project');
+    Route::get('/about', 'front\FrontController@about');
+    Route::get('/service', 'front\FrontController@service');
+    Route::get('/news', 'front\FrontController@newe');
+    Route::get('/contact', 'front\FrontController@contact');
+    Route::get('/career', 'front\FrontController@career');
 //
 Auth::routes(['register'=>false]);
 

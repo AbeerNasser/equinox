@@ -99,69 +99,27 @@
     <section class="section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-box mb-xl-30">
-                        <div class="portfolio-img animate-img">
-                            <a href="project-detail.html">
-                                <img src="assets/images/projects/project1.png" class="image-fit" alt="">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-text">
-                                    <p class="text-orange double-lines fw-500 mb-1"><span>Project Type</span></p>
-                                    <h4 class="fw-600 no-margin"><a href="#" class="text-custom-white">Jabal Omar Makkah <span class="text-orange">.</span></a></h4>
+                @if (count($projects)==0)
+                    <div class="text-center">No projects</div>
+                @else
+                    @foreach ($projects as $index=>$project)
+                        <div class="col-lg-4 col-md-6">
+                            <div class="portfolio-box mb-xl-30">
+                                <div class="portfolio-img animate-img">
+                                    <a href="project-detail.html">
+                                        <img src="{{asset('uploads/projects/'.$project->image)}}" class="image-fit" alt="">
+                                    </a>
+                                    <div class="portfolio-overlay">
+                                        <div class="portfolio-text">
+                                            <p class="text-orange double-lines fw-500 mb-1"><span>{{$project->type}}</span></p>
+                                            <h4 class="fw-600 no-margin"><a href="#" class="text-custom-white">{{$project->name}}<span class="text-orange">.</span></a></h4>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-box mb-xl-30">
-                        <div class="portfolio-img animate-img">
-                            <a href="project-detail.html">
-                                <img src="assets/images/projects/project2.png" class="image-fit" alt="">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-text">
-                                    <p class="text-orange double-lines fw-500 mb-1"><span>Project Type</span></p>
-                                    <h4 class="fw-600 no-margin"><a href="#" class="text-custom-white">King Abdul Aziz Road Makkah <span class="text-orange">.</span></a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-box mb-xl-30">
-                        <div class="portfolio-img animate-img">
-                            <a href="project-detail.html">
-                                <img src="assets/images/projects/project3.png" class="image-fit" alt="">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-text">
-                                    <p class="text-orange double-lines fw-500 mb-1"><span>Project Type</span></p>
-                                    <h4 class="fw-600 no-margin"><a href="#" class="text-custom-white">Thakher City Makkah <span class="text-orange">.</span></a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-box mb-xl-30">
-                        <div class="portfolio-img animate-img">
-                            <a href="project-detail.html">
-                                <img src="assets/images/projects/project2.png" class="image-fit" alt="">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-text">
-                                    <p class="text-orange double-lines fw-500 mb-1"><span>Project Type</span></p>
-                                    <h4 class="fw-600 no-margin"><a href="#" class="text-custom-white">King Abdul Aziz Road Makkah <span class="text-orange">.</span></a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>

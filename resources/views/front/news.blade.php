@@ -100,141 +100,45 @@
     <section class="section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-style-1 mb-xl-30">
-                        <div class="post-img animate-img">
-                            <a href="news-detail.html">
-                                <img src="assets/images/news.png" class="image-fit" alt="">
-                            </a>
-                        </div>
-                        <div class="post-date">
-                            <span class="date">24</span>
-                            <span class="month">Jan</span>
-                        </div>
-                        <div class="post-content">
-                            <div class="post-category">
-                                <p class="double-lines text-orange fw-600 mb-1"><span><a href="#" class="text-orange">EQUINOX GROUP</a></span></p>
+                @if (count($newes)==0)
+                    <div class="text-center">No news</div>
+                @else
+                    @foreach ($newes as $index=>$newe)
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-style-1 mb-xl-30">
+                                <div class="post-img animate-img">
+                                    <a href="news-detail.html">
+                                        <img src="{{asset('uploads/newes/'.$newe->image)}}" class="image-fit" alt="">
+                                    </a>
+                                </div>
+                                <div class="post-date">
+                                    <span class="date">{{ $newe->created_at->format('d') }}</span>
+                                    <span class="month"> {{ \Carbon\Carbon::parse($newe->created_at)->locale('en')->monthName}}</span>
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-category">
+                                        <p class="double-lines text-orange fw-600 mb-1"><span><a href="#" class="text-orange">EQUINOX GROUP</a></span></p>
+                                    </div>
+                                    <h2 class="post-title"><a href="#">{{$newe->title}}</a></h2>
+                                    <ul class="custom-flex post-meta">
+                                        <li>
+                                            <a href="#">
+                                                <i class="fal fa-user text-orange"></i>
+                                                {{$newe->user['name']}}.
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fal fa-calendar-alt text-orange"></i>
+                                                {{ \Carbon\Carbon::parse($newe->created_at)->locale('en')->isoFormat('MMM Do YYYY')}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <h2 class="post-title"><a href="#">News Title Here</a></h2>
-                            <ul class="custom-flex post-meta">
-                                <li>
-                                    <a href="#">
-                                        <i class="fal fa-user text-orange"></i>
-                                        Mahmoud Eladawi.
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fal fa-calendar-alt text-orange"></i>
-                                        24th Jan 2021
-                                    </a>
-                                </li>
-                            </ul>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-style-1 mb-xl-30">
-                        <div class="post-img animate-img">
-                            <a href="news-detail.html">
-                                <img src="assets/images/news.png" class="image-fit" alt="">
-                            </a>
-                        </div>
-                        <div class="post-date">
-                            <span class="date">24</span>
-                            <span class="month">Jan</span>
-                        </div>
-                        <div class="post-content">
-                            <div class="post-category">
-                                <p class="double-lines text-orange fw-600 mb-1"><span><a href="#" class="text-orange">EQUINOX GROUP</a></span></p>
-                            </div>
-                            <h2 class="post-title"><a href="#">News Title Here</a></h2>
-                            <ul class="custom-flex post-meta">
-                                <li>
-                                    <a href="#">
-                                        <i class="fal fa-user text-orange"></i>
-                                        Mahmoud Eladawi.
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fal fa-calendar-alt text-orange"></i>
-                                        24th Jan 2021
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-style-1 mb-xl-30">
-                        <div class="post-img animate-img">
-                            <a href="news-detail.html">
-                                <img src="assets/images/news.png" class="image-fit" alt="">
-                            </a>
-                        </div>
-                        <div class="post-date">
-                            <span class="date">24</span>
-                            <span class="month">Jan</span>
-                        </div>
-                        <div class="post-content">
-                            <div class="post-category">
-                                <p class="double-lines text-orange fw-600 mb-1"><span><a href="#" class="text-orange">EQUINOX GROUP</a></span></p>
-                            </div>
-                            <h2 class="post-title"><a href="#">News Title Here</a></h2>
-                            <ul class="custom-flex post-meta">
-                                <li>
-                                    <a href="#">
-                                        <i class="fal fa-user text-orange"></i>
-                                        Mahmoud Eladawi.
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fal fa-calendar-alt text-orange"></i>
-                                        24th Jan 2021
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-style-1 mb-xl-30">
-                        <div class="post-img animate-img">
-                            <a href="news-detail.html">
-                                <img src="assets/images/news.png" class="image-fit" alt="">
-                            </a>
-                        </div>
-                        <div class="post-date">
-                            <span class="date">24</span>
-                            <span class="month">Jan</span>
-                        </div>
-                        <div class="post-content">
-                            <div class="post-category">
-                                <p class="double-lines text-orange fw-600 mb-1"><span><a href="#" class="text-orange">EQUINOX GROUP</a></span></p>
-                            </div>
-                            <h2 class="post-title"><a href="#">News Title Here</a></h2>
-                            <ul class="custom-flex post-meta">
-                                <li>
-                                    <a href="#">
-                                        <i class="fal fa-user text-orange"></i>
-                                        Mahmoud Eladawi.
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fal fa-calendar-alt text-orange"></i>
-                                        24th Jan 2021
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>

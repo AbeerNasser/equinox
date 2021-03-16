@@ -30,9 +30,7 @@ class ServiceController extends Controller
         ]);
         $data=$request->except('image');
         if($request->image){
-            Image::make($request->image)->resize(300, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save(public_path('uploads/sevicesimg/'.$request->image->hashName()));
+            Image::make($request->image)->save(public_path('uploads/sevicesimg/'.$request->image->hashName()));
             $data['logo']=$request->image->hashName();
         }
         $services = Service::create($data);

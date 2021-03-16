@@ -103,8 +103,8 @@
                                 <div class="banner-text">
                                     <h1 class="fw-600 text-custom-white heading-title" style="font-size:50px; padding-top:15%;">Hotel Management is a challenge and we are unique in it.</h1>
                                     <br />
-                                    <a href="services.html" class="theme-btn btn-red mr-3">Our Services <i class="fal fa-plus"></i></a>
-                                    <a href="about.html" class="theme-btn btn-border">About EQUINOX<i class="fal fa-plus"></i></a>
+                                    <a href="{{url('/service')}}" class="theme-btn btn-red mr-3">Our Services <i class="fal fa-plus"></i></a>
+                                    <a href="{{url('/about')}}" class="theme-btn btn-border">About EQUINOX<i class="fal fa-plus"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -168,6 +168,46 @@
                     <h3 class="fw-700 title">Our Services<span class="text-red">.</span></h3>
                 </div>
             </div>
+            {{-- <div class="row">
+                <div class="col-12">
+                    <div class="custom-tabs">
+                        <ul class="custom-flex nav nav-tabs row">
+                            @foreach ($services as $index=>$service)
+                            <li class="nav-item col-lg-3 col-sm-3 col-6">
+                                <a href="#service{{$index+1}}" class="nav-link active" data-toggle="tab">
+                                    <i><img src="{{asset('uploads/sevicesimg/'.$service->logo)}}" /></i>
+                                    <span class="fw-500" style="font-size:15px;">{{$service->title}}</span>
+                                </a>
+                            </li>
+                            @endforeach
+                        </ul>
+                        <div class="tab-content">
+                            @foreach ($services as $index=>$service)
+                            <div class="tab-pane fade active show" id="service{{$index+1}}">
+                                <div class="tab-inner">
+                                    <div class="row">
+                                        <div class="col-lg-5">
+                                            <img src="assets/images/projectManagement.png" class="image-fit" alt="">
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <div class="right-side">
+                                                <h3 class="fw-600"><a href="#">{{$service->title}}</a></h3>
+                                                <p class="fw-500 sedra">
+                                                    {{$service->description}}
+                                                </p>
+                                                <br />
+                                                <a href="#" class="theme-btn btn-red">View More Details</a>
+                                                <i class="flaticon-target"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
             <div class="row">
                 <div class="col-12">
                     <div class="custom-tabs">
@@ -289,56 +329,33 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-heading">
-                    <!--<h6 class="text-red mb-xl-10 sub-heading"><span>EQUINOX Group</span></h6>-->
                     <h3 class="fw-700 title">Our Projects<span class="text-red">.</span></h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-box mb-xl-30">
-                        <div class="portfolio-img animate-img">
-                            <a href="project-detail.html">
-                                <img src="assets/images/proj1.png" class="image-fit" alt="">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-text">
-                                    <h4 class="fw-600 no-margin"><a href="#" class="text-custom-white">Project Name <span class="text-orange">.</span></a></h4>
+                @if (count($projects)==0)
+                    <div class="text-center">No projects</div>
+                @else
+                    @foreach ($projects as $index=>$project)
+                        <div class="col-lg-4 col-md-6">
+                            <div class="portfolio-box mb-xl-30">
+                                <div class="portfolio-img animate-img">
+                                    <a href="project-detail.html">
+                                        <img src="{{asset('uploads/projects/'.$project->image)}}" class="image-fit" alt="">
+                                    </a>
+                                    <div class="portfolio-overlay">
+                                        <div class="portfolio-text">
+                                            <h4 class="fw-600 no-margin"><a href="#" class="text-custom-white">{{$project->name}}<span class="text-orange">.</span></a></h4>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-box mb-xl-30">
-                        <div class="portfolio-img animate-img">
-                            <a href="project-detail.html">
-                                <img src="assets/images/proj2.png" class="image-fit" alt="">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-text">
-                                    <h4 class="fw-600 no-margin"><a href="#" class="text-custom-white">Project Name <span class="text-orange">.</span></a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-box mb-xl-30">
-                        <div class="portfolio-img animate-img">
-                            <a href="project-detail.html">
-                                <img src="assets/images/proj3.png" class="image-fit" alt="">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-text">
-                                    <h4 class="fw-600 no-margin"><a href="#" class="text-custom-white">Project Name <span class="text-orange">.</span></a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
                 <div class="col-lg-12 col-md-12">
                     <center>
-                        <a href="projects.html" class="theme-btn btn-red">View More Projects</a>
+                        <a href="{{url('/project')}}" class="theme-btn btn-red">View More Projects</a>
                     </center>
                 </div>
             </div>
@@ -590,7 +607,7 @@
                                     <p class="text-custom-white">
                                         You Have the Passion & Determination ? We Definitely Have a Place For You.
                                     </p>
-                                    <a href="careers.html" class="text-custom-white contact-no">
+                                    <a href="{{url('/career')}}" class="text-custom-white contact-no">
                                         <i class="fal fa-briefcase text-orange"></i>
                                         Apply Now
                                     </a>

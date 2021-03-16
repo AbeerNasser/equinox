@@ -99,69 +99,27 @@
     <section class="section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="choose-us-box style-2 mb-xl-30">
-                        <div class="top-sec">
-                            <div class="icon">
-                                <img src="assets/images/devMang.png" />
+                @if (count($services)==0)
+                    <div class="text-center">No services</div>
+                @else
+                    @foreach ($services as $index=>$service)
+                        <div class="col-lg-6 col-md-6">
+                            <div class="choose-us-box style-2 mb-xl-30">
+                                <div class="top-sec">
+                                    <div class="icon">
+                                        <img src="{{asset('uploads/sevicesimg/'.$service->logo)}}" />
+                                    </div>
+                                    <h4 class="fw-600 no-margin"><a href="#">{{$service->title}}</a></h4>
+                                </div>
+                                <p class="fw-500 mb-xl-10 sedra">
+                                    {{$service->description}}
+                                </p>
+                                <a href="#" class="fw-600 fs-14 link">Read More <i class="fas fa-long-arrow-right text-orange"></i></a>
+                                <i class="flaticon-statistics bg-icon"></i>
                             </div>
-                            <h4 class="fw-600 no-margin"><a href="#">Development Management</a></h4>
                         </div>
-                        <p class="fw-500 mb-xl-10 sedra">
-                            We provide development management services to property owners and investors with the critical expertise to successfully undertake real estate development throughout its life-cycle; i.e. from inception of the project all the way to completion and operation stages.
-                        </p>
-                        <a href="#" class="fw-600 fs-14 link">Read More <i class="fas fa-long-arrow-right text-orange"></i></a>
-                        <i class="flaticon-statistics bg-icon"></i>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6">
-                    <div class="choose-us-box style-2 mb-xl-30">
-                        <div class="top-sec">
-                            <div class="icon">
-                                <img src="assets/images/hotelAsse.png" />
-                            </div>
-                            <h4 class="fw-600 no-margin"><a href="#">Hotel Asset Management</a></h4>
-                        </div>
-                        <p class="fw-500 mb-xl-10 sedra">
-                            We fill the gap where ownership requires experts to undertake complete responsibility of management contracts, managing the manager, benchmarking property performance, and the capital improvement decision
-                        </p>
-                        <a href="#" class="fw-600 fs-14 link">Read More <i class="fas fa-long-arrow-right text-orange"></i></a>
-                        <i class="flaticon-statistics bg-icon"></i>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6">
-                    <div class="choose-us-box style-2 mb-xl-30">
-                        <div class="top-sec">
-                            <div class="icon">
-                                <img src="assets/images/projMang.png" />
-                            </div>
-                            <h4 class="fw-600 no-margin"><a href="#">Project Management</a></h4>
-                        </div>
-                        <p class="fw-500 mb-xl-10 sedra">
-                            We provide project management services to ensure that projects are carried out according to the development plans in terms of scope, cost, and schedule. For sizeable developments, we work with our technical affiliates in providing full project management services to manage, execute, supervise, monitor, and complete the projects.
-                        </p>
-                        <a href="#" class="fw-600 fs-14 link">Read More <i class="fas fa-long-arrow-right text-orange"></i></a>
-                        <i class="flaticon-statistics bg-icon"></i>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6">
-                    <div class="choose-us-box style-2 mb-xl-30">
-                        <div class="top-sec">
-                            <div class="icon">
-                                <img src="assets/images/hosAdvis.png" />
-                            </div>
-                            <h4 class="fw-600 no-margin"><a href="#">Hospitality Advisory</a></h4>
-                        </div>
-                        <p class="fw-500 mb-xl-10 sedra">
-                            The hotel industry has undergone fundamental structural changes over the last few decades. Hotels are now owned by a diverse range of investors, while operators much prefer to focus on management only. As industry specialist we provide services that fill the gap of knowledge and experience in full array of hotel project, development and successful operational needs.
-                        </p>
-                        <a href="#" class="fw-600 fs-14 link">Read More <i class="fas fa-long-arrow-right text-orange"></i></a>
-                        <i class="flaticon-statistics bg-icon"></i>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>

@@ -50,7 +50,7 @@
                         <div class="dropdown">
                             <a href="javascript:void(0)" class="nav-link user_btn"><img class="avatar" src="../assets/images/user.png" alt=""/></a>
                             <a href="{{url('/home')}}" class="nav-link icon"><i class="fa fa-home"></i></a>
-                            <a href="{{url('Dashboard/clients')}}"  class="nav-link icon app_inbox"><i class="fa fa-users"></i></a>
+                            <a href="{{url('Dashboard/users')}}"  class="nav-link icon app_inbox"><i class="fa fa-users"></i></a>
                             <a href="{{url('Dashboard/projects')}}"  class="nav-link icon app_file xs-hide"><i class="fa fa-university"></i></a>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">{{ Auth::user()->email }}</li>
                         <li class="list-group-item">+ 202-555-2828</li>
-                        <li class="list-group-item">مسؤول عام</li>
+                        <li class="list-group-item">{{ Auth::user()->role }} </li>
                     </ul>
                 </div>
             </div>
@@ -329,6 +329,13 @@
                 var id = button.data('id');
                 $('#editForm').attr("action", "{{url('Dashboard/users')}}" + "/" + id);
             });
+
+            //contacts
+            $('#deleteContactModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var id = button.data('id');
+                $('#deleteForm').attr("action", "{{url('Dashboard/contacts')}}" + "/" + id);
+             });
 
             // leader
             $('#deleteModalleader').on('show.bs.modal', function (event) {

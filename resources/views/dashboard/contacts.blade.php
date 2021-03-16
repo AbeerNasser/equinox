@@ -49,7 +49,7 @@
                                                 <td>{{$contact->subject['name']}}</td>
                                                 <td>{{$contact->message}}</td>
                                                 <td>
-                                                    <button type="button" data-id="{{$contact->id}}" class="btn btn-danger" data-toggle="modal" data-target="#deleteUserModal">حذف</button>
+                                                    <button type="button" data-id="{{$contact->id}}" class="btn btn-danger" data-toggle="modal" data-target="#deleteContactModal">حذف</button>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -63,7 +63,7 @@
         </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="deleteContactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

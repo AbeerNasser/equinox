@@ -38,13 +38,13 @@
                             <h5 class="text-custom-white fw-600">EQUINOX<span class="text-red">.</span></h5>
                             <ul class="custom">
                                 <li>
-                                    <a href="about.html">About Us</a>
+                                    <a href="{{url('/about')}}">About Us</a>
                                 </li>
                                 <li>
-                                    <a href="careers.html">Careers</a>
+                                    <a href="{{url('/career')}}">Careers</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html">Contact</a>
+                                    <a href="{{url('/contact')}}">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -54,13 +54,13 @@
                             <h5 class="text-custom-white fw-600">ABOUT US<span class="text-red">.</span></h5>
                             <ul class="custom">
                                 <li>
-                                    <a href="services.html">Services</a>
+                                    <a href="{{url('/service')}}">Services</a>
                                 </li>
                                 <li>
-                                    <a href="projects.html">Projects</a>
+                                    <a href="{{url('/project')}}">Projects</a>
                                 </li>
                                 <li>
-                                    <a href="news.html">News</a>
+                                    <a href="{{url('/news')}}">News</a>
                                 </li>
                             </ul>
                         </div>
@@ -90,13 +90,13 @@
                     <div class="col-lg-4 col-md-6">
                         <ul class="custom-flex ft-menu">
                             <li>
-                                <a href="#" class="text-custom-white">Services</a>
+                                <a href="{{url('/service')}}" class="text-custom-white">Services</a>
                             </li>
                             <li>
-                                <a href="#" class="text-custom-white">Projects</a>
+                                <a href="{{url('/project')}}" class="text-custom-white">Projects</a>
                             </li>
                             <li>
-                                <a href="#" class="text-custom-white">About</a>
+                                <a href="{{url('/about')}}" class="text-custom-white">About</a>
                             </li>
                         </ul>
                     </div>

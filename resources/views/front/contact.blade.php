@@ -102,11 +102,12 @@
             <h5>Please let us know if you have a question, want to leave a comment, or would like further information about Consulting.</h5>
             <div class="col-12">
                 <div class="contact-form">
-                    <form action="#" method="POST">
+                    <form action="{{url('/')}}" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group group-form">
-                                    <input type="text" name="#" class="form-control form-control-custom" placeholder="Full Name"/>
+                                    <input type="text" name="name" class="form-control form-control-custom" placeholder="Full Name"/>
                                     <span class="icon">
                                         <i class="fal fa-user"></i>
                                     </span>
@@ -114,7 +115,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group group-form">
-                                    <input type="text" name="#" class="form-control form-control-custom" placeholder="Email Address"/>
+                                    <input type="text" name="email" class="form-control form-control-custom" placeholder="Email Address"/>
                                     <span class="icon">
                                         <i class="fal fa-envelope"></i>
                                     </span>
@@ -122,7 +123,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group group-form">
-                                    <input type="text" name="#" class="form-control form-control-custom" placeholder="Phone Number"/>
+                                    <input type="text" name="phone" class="form-control form-control-custom" placeholder="Phone Number"/>
                                     <span class="icon">
                                         <i class="fal fa-phone-alt"></i>
                                     </span>
@@ -130,12 +131,11 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group group-form">
-                                    <select class="form-control form-control-custom">
-                                        <option>Select Subject</option>
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
+                                    <select class="form-control form-control-custom" name="subject_id">
+                                        {{-- <option>Select Subject</option> --}}
+                                        @foreach($subjects as $subject )
+                                        <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                        @endforeach
                                     </select>
                                     <span class="icon">
                                         <i class="fal fa-book"></i>
@@ -144,7 +144,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group group-form">
-                                    <textarea name="#" class="form-control form-control-custom"></textarea>
+                                    <textarea name="message" class="form-control form-control-custom"></textarea>
                                     <span class="icon">
                                         <i class="fal fa-pencil-alt"></i>
                                     </span>

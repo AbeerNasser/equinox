@@ -100,151 +100,42 @@
     <section class="section-padding team-sec">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-block-2 p-relative mb-xl-30">
-                        <div class="team-image animate-img">
-                            <img src="assets/images/team1.png" class="image-fit" alt="">
+                @if (count($leaders)==0)
+                    <div class="text-center">No Team</div>
+                @else
+                    @foreach ($leaders as $index=>$leader)
+                        <div class="col-lg-3 col-md-6">
+                            <div class="team-block-2 p-relative mb-xl-30">
+                                <div class="team-image animate-img">
+                                    <img src="{{asset('uploads/leaders/'.$leader->photo)}}" class="image-fit" alt="">
+                                </div>
+                                <ul class="team-social-media custom">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-plus"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="team-caption">
+                                    <h4 class="fw-600 mb-1"><a href="#">{{$leader->name}}</a></h4>
+                                    <p class="no-margin fw-500 double-lines text-orange"><span>{{$leader->description}}</span></p>
+                                </div>
+                            </div>
                         </div>
-                        <ul class="team-social-media custom">
-                            <li>
-                                <a href="#">
-                                    <i class="fal fa-plus"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="team-caption">
-                            <h4 class="fw-600 mb-1"><a href="#">Shuja Zaidi</a></h4>
-                            <p class="no-margin fw-500 double-lines text-orange"><span>Principal Consultant</span></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-block-2 p-relative mb-xl-30">
-                        <div class="team-image animate-img">
-                            <img src="assets/images/team2.png" class="image-fit" alt="">
-                        </div>
-                        <ul class="team-social-media custom">
-                            <li>
-                                <a href="#">
-                                    <i class="fal fa-plus"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="team-caption">
-                            <h4 class="fw-600 mb-1"><a href="#">Sahimi Saaidi</a></h4>
-                            <p class="no-margin fw-500 double-lines text-orange"><span>Development Director</span></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-block-2 p-relative mb-xl-30">
-                        <div class="team-image animate-img">
-                            <img src="assets/images/team3.png" class="image-fit" alt="">
-                        </div>
-                        <ul class="team-social-media custom">
-                            <li>
-                                <a href="#">
-                                    <i class="fal fa-plus"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="team-caption">
-                            <h4 class="fw-600 mb-1"><a href="#">Abdullah Jamal</a></h4>
-                            <p class="no-margin fw-500 double-lines text-orange"><span>Business Dev. Director</span></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-block-2 p-relative mb-xl-30">
-                        <div class="team-image animate-img">
-                            <img src="assets/images/team4.png" class="image-fit" alt="">
-                        </div>
-                        <ul class="team-social-media custom">
-                            <li>
-                                <a href="#">
-                                    <i class="fal fa-plus"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="team-caption">
-                            <h4 class="fw-600 mb-1"><a href="#">Abdul Waheed</a></h4>
-                            <p class="no-margin fw-500 double-lines text-orange"><span>Finance Director</span></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-block-2 p-relative mb-xl-30">
-                        <div class="team-image animate-img">
-                            <img src="assets/images/team5.png" class="image-fit" alt="">
-                        </div>
-                        <ul class="team-social-media custom">
-                            <li>
-                                <a href="#">
-                                    <i class="fal fa-plus"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="team-caption">
-                            <h4 class="fw-600 mb-1"><a href="#">Mustafa Erqsous</a></h4>
-                            <p class="no-margin fw-500 double-lines text-orange"><span>Head of Architectural Design</span></p>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
+
         </div>
     </section>
     <!-- End Team -->
