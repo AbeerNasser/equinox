@@ -116,19 +116,19 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="{{$leader->facebook_link}}">
                                             <i class="fab fa-facebook-f"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="{{$leader->twitter_link}}">
                                             <i class="fab fa-twitter"></i>
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="team-caption">
                                     <h4 class="fw-600 mb-1"><a href="#">{{$leader->name}}</a></h4>
-                                    <p class="no-margin fw-500 double-lines text-orange"><span>{{$leader->description}}</span></p>
+                                    <p class="no-margin fw-500 double-lines text-orange"><span>{{$leader->title}}</span></p>
                                 </div>
                             </div>
                         </div>

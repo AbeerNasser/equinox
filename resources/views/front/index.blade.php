@@ -168,13 +168,13 @@
                     <h3 class="fw-700 title">Our Services<span class="text-red">.</span></h3>
                 </div>
             </div>
-            {{-- <div class="row">
+            <div class="row">
                 <div class="col-12">
                     <div class="custom-tabs">
                         <ul class="custom-flex nav nav-tabs row">
                             @foreach ($services as $index=>$service)
                             <li class="nav-item col-lg-3 col-sm-3 col-6">
-                                <a href="#service{{$index+1}}" class="nav-link active" data-toggle="tab">
+                                <a href="#service{{$index+1}}" class="nav-link " data-toggle="tab">
                                     <i><img src="{{asset('uploads/sevicesimg/'.$service->logo)}}" /></i>
                                     <span class="fw-500" style="font-size:15px;">{{$service->title}}</span>
                                 </a>
@@ -183,7 +183,7 @@
                         </ul>
                         <div class="tab-content">
                             @foreach ($services as $index=>$service)
-                            <div class="tab-pane fade active show" id="service{{$index+1}}">
+                            <div class="tab-pane fade show" id="service{{$index+1}}">
                                 <div class="tab-inner">
                                     <div class="row">
                                         <div class="col-lg-5">
@@ -196,7 +196,7 @@
                                                     {{$service->description}}
                                                 </p>
                                                 <br />
-                                                <a href="#" class="theme-btn btn-red">View More Details</a>
+                                                <a href="{{url('/service')}}" class="theme-btn btn-red">View More Details</a>
                                                 <i class="flaticon-target"></i>
                                             </div>
                                         </div>
@@ -204,118 +204,6 @@
                                 </div>
                             </div>
                             @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-            <div class="row">
-                <div class="col-12">
-                    <div class="custom-tabs">
-                        <ul class="custom-flex nav nav-tabs row">
-                            <li class="nav-item col-lg-3 col-sm-3 col-6">
-                                <a href="#service1" class="nav-link active" data-toggle="tab">
-                                    <i><img src="assets/images/devMang.png" /></i>
-                                    <span class="fw-500" style="font-size:15px;">Development Management</span>
-                                </a>
-                            </li>
-                            <li class="nav-item col-lg-3 col-sm-3 col-6">
-                                <a href="#service3" class="nav-link" data-toggle="tab">
-                                    <i><img src="assets/images/hosAdvis.png" /></i>
-                                    <span class="fw-500" style="font-size:18px;">Hospitality Advisory</span>
-                                </a>
-                            </li>
-                            <li class="nav-item col-lg-3 col-sm-3 col-6">
-                                <a href="#service4" class="nav-link" data-toggle="tab">
-                                    <i><img src="assets/images/hotelAsse.png" /></i>
-                                    <span class="fw-500" style="font-size:18px;">Hotel Asset</span>
-                                </a>
-                            </li>
-                            <li class="nav-item col-lg-3 col-sm-3 col-6">
-                                <a href="#service2" class="nav-link" data-toggle="tab">
-                                    <i><img src="assets/images/projMang.png" /></i>
-                                    <span class="fw-500" style="font-size:18px;">Project Management</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane fade active show" id="service1">
-                                <div class="tab-inner">
-                                    <div class="row">
-                                        <div class="col-lg-5">
-                                            <img src="assets/images/projectManagement.png" class="image-fit" alt="">
-                                        </div>
-                                        <div class="col-lg-7">
-                                            <div class="right-side">
-                                                <h3 class="fw-600"><a href="#">Development Management</a></h3>
-                                                <p class="fw-500 sedra">
-                                                    We provide development management services to property owners and investors with the critical expertise to successfully undertake real estate development throughout its life-cycle; i.e. from inception of the project all the way to completion and operation stages.
-                                                </p>
-                                                <br />
-                                                <a href="#" class="theme-btn btn-red">View More Details</a>
-                                                <i class="flaticon-target"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="service3">
-                                <div class="tab-inner">
-                                    <div class="row">
-                                        <div class="col-lg-5">
-                                            <img src="assets/images/projectManagement.png" class="image-fit" alt="">
-                                        </div>
-                                        <div class="col-lg-7">
-                                            <div class="right-side">
-                                                <h3 class="fw-600"><a href="#">Hospitality Advisory</a></h3>
-                                                <p class="fw-500 sedra">
-                                                    The hotel industry has undergone fundamental structural changes over the last few decades. Hotels are now owned by a diverse range of investors, while operators much prefer to focus on management only. As industry specialist we provide services that fill the gap of knowledge and experience in full array of hotel project, development and successful operational needs.
-                                                </p>
-                                                <br />
-                                                <a href="#" class="theme-btn btn-red">View More Details</a>
-                                                <i class="flaticon-target"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="service4">
-                                <div class="tab-inner">
-                                    <div class="row">
-                                        <div class="col-lg-5">
-                                            <img src="assets/images/projectManagement.png" class="image-fit" alt="">
-                                        </div>
-                                        <div class="col-lg-7">
-                                            <div class="right-side">
-                                                <h3 class="fw-600"><a href="#">Hotel Asset Management</a></h3>
-                                                <p class="fw-500 sedra">
-                                                    We fill the gap where ownership requires experts to undertake complete responsibility of management contracts, managing the manager, benchmarking property performance, and the capital improvement decision
-                                                </p>
-                                                <br />
-                                                <a href="#" class="theme-btn btn-red">View More Details</a>
-                                                <i class="flaticon-target"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="service2">
-                                <div class="tab-inner">
-                                    <div class="row">
-                                        <div class="col-lg-5">
-                                            <img src="assets/images/projectManagement.png" class="image-fit" alt="">
-                                        </div>
-                                        <div class="col-lg-7">
-                                            <div class="right-side">
-                                                <h3 class="fw-600"><a href="#">Project Management</a></h3>
-                                                <p class="fw-500 sedra">We provide project management services to ensure that projects are carried out according to the development plans in terms of scope, cost, and schedule. For sizeable developments, we work with our technical affiliates in providing full project management services to manage, execute, supervise, monitor, and complete the projects.</p>
-                                                <br />
-                                                <a href="#" class="theme-btn btn-red">View More Details</a>
-                                                <i class="flaticon-target"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -368,218 +256,59 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-heading">
-                    <!--<h6 class="text-orange mb-xl-10 sub-heading"><span>EQUINOX Group</span></h6>-->
                     <h3 class="text-blue fw-700 title">Our Leaders<span class="text-orange">.</span></h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <div class="team-slider row">
-                        <div class="slide-item col-12">
-                            <div class="team-box animate-img">
-                                <img src="assets/images/team1.png" class="image-fit" alt="">
-                                <div class="team-caption">
-                                    <div class="content">
-                                        <h5 class="fw-600 mb-1"><a href="team.html" class="text-custom-white">Shuja Zaidi</a></h5>
-                                        <p class="text-orange fw-600 double-lines"><span>Principal Consultant</span></p>
-                                        <p class="text-light-white">
-                                            Date, Data, Data, Date, Data, Data, Date, Data, Data, Date, Data, Data.
-                                        </p>
-                                        <ul class="custom-flex team-social">
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-facebook-f"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-behance"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-linkedin"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-youtube"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
+                        @if (count($leaders)==0)
+                            <div class="text-center">No Team</div>
+                        @else
+                            @foreach ($leaders as $index=>$leader)
+                            <div class="slide-item col-12">
+                                <div class="team-box animate-img">
+                                    <img src="{{asset('uploads/leaders/'.$leader->photo)}}" class="image-fit" alt="">
+                                    <div class="team-caption">
+                                        <div class="content">
+                                            <h5 class="fw-600 mb-1"><a href="{{url('/career')}}" class="text-custom-white">{{$leader->name}}</a></h5>
+                                            <p class="text-orange fw-600 double-lines"><span>{{$leader->title}}</span></p>
+                                            <p class="text-light-white">
+                                                {{$leader->description}}.
+                                            </p>
+                                            <ul class="custom-flex team-social">
+                                                <li>
+                                                    <a href="{{$leader->facebook_link}}" class="text-light-white">
+                                                        <i class="fab fa-facebook-f"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{$leader->twitter_link}}" class="text-light-white">
+                                                        <i class="fab fa-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="text-light-white">
+                                                        <i class="fab fa-behance"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="text-light-white">
+                                                        <i class="fab fa-linkedin"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="text-light-white">
+                                                        <i class="fab fa-youtube"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="slide-item col-12">
-                            <div class="team-box animate-img">
-                                <img src="assets/images/team2.png" class="image-fit" alt="">
-                                <div class="team-caption">
-                                    <div class="content">
-                                        <h5 class="fw-600 mb-1"><a href="team.html" class="text-custom-white">Sahimi Saaidi</a></h5>
-                                        <p class="text-orange fw-600 double-lines"><span>Development Director</span></p>
-                                        <p class="text-light-white">
-                                            Date, Data, Data, Date, Data, Data, Date, Data, Data, Date, Data, Data.
-                                        </p>
-                                        <ul class="custom-flex team-social">
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-facebook-f"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-behance"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-linkedin"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-youtube"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide-item col-12">
-                            <div class="team-box animate-img">
-                                <img src="assets/images/team3.png" class="image-fit" alt="">
-                                <div class="team-caption">
-                                    <div class="content">
-                                        <h5 class="fw-600 mb-1"><a href="team.html" class="text-custom-white">Abdullah Jamal</a></h5>
-                                        <p class="text-orange fw-600 double-lines"><span>Business Dev. Director</span></p>
-                                        <p class="text-light-white">
-                                            Date, Data, Data, Date, Data, Data, Date, Data, Data, Date, Data, Data.
-                                        </p>
-                                        <ul class="custom-flex team-social">
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-facebook-f"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-behance"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-linkedin"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-youtube"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide-item col-12">
-                            <div class="team-box animate-img">
-                                <img src="assets/images/team4.png" class="image-fit" alt="">
-                                <div class="team-caption">
-                                    <div class="content">
-                                        <h5 class="fw-600 mb-1"><a href="team.html" class="text-custom-white">Abdul Waheed Nizami</a></h5>
-                                        <p class="text-orange fw-600 double-lines"><span>Finance Director</span></p>
-                                        <p class="text-light-white">
-                                            Date, Data, Data, Date, Data, Data, Date, Data, Data, Date, Data, Data.
-                                        </p>
-                                        <ul class="custom-flex team-social">
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-facebook-f"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-behance"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-linkedin"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-youtube"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide-item col-12">
-                            <div class="team-box animate-img">
-                                <img src="assets/images/team5.png" class="image-fit" alt="">
-                                <div class="team-caption">
-                                    <div class="content">
-                                        <h5 class="fw-600 mb-1"><a href="team.html" class="text-custom-white">Mustafa Erqsous</a></h5>
-                                        <p class="text-orange fw-600 double-lines"><span>Head of Architectural Design</span></p>
-                                        <p class="text-light-white">
-                                            Date, Data, Data, Date, Data, Data, Date, Data, Data, Date, Data, Data.
-                                        </p>
-                                        <ul class="custom-flex team-social">
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-facebook-f"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-behance"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-linkedin"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="text-light-white">
-                                                    <i class="fab fa-youtube"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
@@ -626,109 +355,50 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-heading">
-                    <!--<h6 class="text-orange mb-xl-10 sub-heading"><span>EQUINOX Group</span></h6>-->
                     <h3 class="text-blue fw-700 title">Our News<span class="text-orange">.</span></h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <div class="blog-slider row">
-                        <div class="col-lg-12 slide-item">
-                            <div class="blog-style-1">
-                                <div class="post-img animate-img">
-                                    <a href="news-detail.html">
-                                        <img src="assets/images/news.png" class="image-fit" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-date">
-                                    <span class="date">24</span>
-                                    <span class="month">Jan</span>
-                                </div>
-                                <div class="post-content">
-                                    <div class="post-category">
+                        @if (count($newes)==0)
+                            <div class="text-center">No news</div>
+                        @else
+                            @foreach ($newes as $index=>$newe)
+                                <div class="col-lg-12 slide-item">
+                                    <div class="blog-style-1">
+                                        <div class="post-img animate-img">
+                                            <a href="news-detail.html">
+                                                <img src="{{asset('uploads/newes/'.$newe->image)}}" class="image-fit" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="post-date">
+                                            <span class="date">{{ $newe->created_at->format('d') }}</span>
+                                            <span class="month">{{ \Carbon\Carbon::parse($newe->created_at)->locale('en')->monthName}}</span>
+                                        </div>
+                                        <div class="post-content">
+                                            <div class="post-category">
+                                            </div>
+                                            <h2 class="post-title"><a href="news-detail.html">{{$newe->title}}</a></h2>
+                                            <ul class="custom-flex post-meta">
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fal fa-user text-orange"></i>
+                                                        {{$newe->user['name']}}.
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fal fa-calendar-alt text-orange"></i>
+                                                        {{ \Carbon\Carbon::parse($newe->created_at)->locale('en')->isoFormat('MMM Do YYYY')}}
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <h2 class="post-title"><a href="news-detail.html">News Title Here</a></h2>
-                                    <ul class="custom-flex post-meta">
-                                        <li>
-                                            <a href="#">
-                                                <i class="fal fa-user text-orange"></i>
-                                                Mahmoud Eladawi.
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fal fa-calendar-alt text-orange"></i>
-                                                24th Jan 2021
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 slide-item">
-                            <div class="blog-style-1">
-                                <div class="post-img animate-img">
-                                    <a href="news-detail.html">
-                                        <img src="assets/images/news.png" class="image-fit" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-date">
-                                    <span class="date">24</span>
-                                    <span class="month">Jan</span>
-                                </div>
-                                <div class="post-content">
-                                    <div class="post-category">
-                                    </div>
-                                    <h2 class="post-title"><a href="news-detail.html">News Title Here</a></h2>
-                                    <ul class="custom-flex post-meta">
-                                        <li>
-                                            <a href="#">
-                                                <i class="fal fa-user text-orange"></i>
-                                                Mahmoud Eladawi.
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fal fa-calendar-alt text-orange"></i>
-                                                24th Jan 2021
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 slide-item">
-                            <div class="blog-style-1">
-                                <div class="post-img animate-img">
-                                    <a href="news-detail.html">
-                                        <img src="assets/images/news.png" class="image-fit" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-date">
-                                    <span class="date">24</span>
-                                    <span class="month">Jan</span>
-                                </div>
-                                <div class="post-content">
-                                    <div class="post-category">
-                                    </div>
-                                    <h2 class="post-title"><a href="news-detail.html">News Title Here</a></h2>
-                                    <ul class="custom-flex post-meta">
-                                        <li>
-                                            <a href="#">
-                                                <i class="fal fa-user text-orange"></i>
-                                                Mahmoud Eladawi.
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fal fa-calendar-alt text-orange"></i>
-                                                24th Jan 2021
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
