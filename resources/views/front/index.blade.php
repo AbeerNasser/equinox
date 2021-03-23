@@ -89,8 +89,8 @@
                                 <div class="banner-text">
                                     <h1 class="fw-600 text-custom-white heading-title" style="font-size:50px; padding-top:15%;">Sustainable Development is the pathway to the future</h1>
                                     <br />
-                                    <a href="services.html" class="theme-btn btn-red mr-3">Our Services <i class="fal fa-plus"></i></a>
-                                    <a href="about.html" class="theme-btn btn-border">About EQUINOX<i class="fal fa-plus"></i></a>
+                                    <a href="{{url('/service')}}" class="theme-btn btn-red mr-3">Our Services <i class="fal fa-plus"></i></a>
+                                    <a href="{{url('/about')}}" class="theme-btn btn-border">About EQUINOX<i class="fal fa-plus"></i></a>
                                 </div>
                             </div>
                         </div>

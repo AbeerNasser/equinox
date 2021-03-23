@@ -27,7 +27,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th >صورة الخبر</th>
-                                        <th >إسم الخبر</th>
+                                        <th >عنوان الخبر</th>
                                         <th >تفاصيل الخبر</th>
                                         <th >كاتب الخبر</th>
                                         <th >عمليات</th>
@@ -37,7 +37,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th >صورة الخبر</th>
-                                        <th >إسم الخبر</th>
+                                        <th >عنوان الخبر</th>
                                         <th >تفاصيل الخبر</th>
                                         <th >كاتب الخبر</th>
                                         <th >عمليات</th>
@@ -120,7 +120,7 @@
                             <img src="{{asset('uploads/newes/default.png')}}" width="100px" class="img-thumbnail image-preview">
                         </div>
                             <div class="form-group mb-0">
-                                <label class="form-label">إسم الخبر</label>
+                                <label class="form-label">عنوان الخبر</label>
                                 <input type="text" class="form-control" name="title" />
                             </div>
                             <div class="form-group mb-0">
@@ -152,7 +152,7 @@
                     @method('POST')
                     <div class="modal-body">
                             <div class="form-group ">
-                                <label class="form-label">إسم الخبر</label>
+                                <label class="form-label">عنوان الخبر</label>
                                 <input type="text" class="form-control" name="title" />
                             </div>
                             <div class="form-group">

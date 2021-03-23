@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Leader extends Model
 {
     protected $fillable = [
-        'name', 'photo', 'description',
+        'name','title', 'photo', 'description','facebook_link','twitter_link',
     ];
 }

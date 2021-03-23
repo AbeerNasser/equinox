@@ -109,21 +109,41 @@
                     @csrf
                     @method('PUT')
                     <div class="modal-body">
-                            <div class="form-group mb-0">
+                        <div class="row">
+                            <div class="form-group col-6">
                                 <label class="form-label">إسم المدير</label>
                                 <input type="text" class="form-control" name="name" />
                             </div>
-                            <div class="form-group mb-0">
+                            <div class="form-group col-6">
                                 <label class="form-label">وظيفة المدير</label>
+                                <input type="text" class="form-control" name="title" />
+                            </div>
+                       </div>
+                       <div class="row">
+                            <div class="form-group col-6">
+                                <label class="form-label">حساب الفيسبوك</label>
+                                <input type="url" class="form-control" name="facebook_link" />
+                            </div>
+                            <div class="form-group col-6">
+                                <label class="form-label">حساب تويتر</label>
+                                <input type="url" class="form-control" name="twitter_link" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-label">صورة المدير</label>
+                                    <input type="file" class="form-control image" name="photo">
+                                </div>
+                                <div class="form-group">
+                                    <img src="{{asset('uploads/leaders/default.png')}}" width="100px" class="img-thumbnail image-preview">
+                                </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label class="form-label">معلومات اكثر</label>
                                 <input type="text" class="form-control" name="description" />
                             </div>
-                            <div class="form-group">
-                                <label class="form-label">صورة المدير</label>
-                                <input type="file" class="form-control image" name="photo">
-                            </div>
-                            <div class="form-group">
-                                <img src="{{asset('uploads/leaders/default.png')}}" width="100px" class="img-thumbnail image-preview">
-                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success">تعديل البيانات</button>
@@ -148,21 +168,42 @@
                     @csrf
                     @method('POST')
                     <div class="modal-body">
-                            <div class="form-group ">
-                                <label class="form-label">إسم المدير</label>
-                                <input type="text" class="form-control" name="name" />
+                           <div class="row">
+                                <div class="form-group col-6">
+                                    <label class="form-label">إسم المدير</label>
+                                    <input type="text" class="form-control" name="name" />
+                                </div>
+                                <div class="form-group col-6">
+                                    <label class="form-label">وظيفة المدير</label>
+                                    <input type="text" class="form-control" name="title" />
+                                </div>
+                           </div>
+                           <div class="row">
+                                <div class="form-group col-6">
+                                    <label class="form-label">حساب الفيسبوك</label>
+                                    <input type="url" class="form-control" name="facebook_link" />
+                                </div>
+                                <div class="form-group col-6">
+                                    <label class="form-label">حساب تويتر</label>
+                                    <input type="url" class="form-control" name="twitter_link" />
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label class="form-label">وظيفة المدير</label>
-                                <input type="text" class="form-control" name="description" />
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">صورة المدير</label>
-                                <input type="file" class="form-control image" name="photo">
-                            </div>
-                            <div class="form-group">
-                                <img src="{{asset('uploads/leaders/default.png')}}" width="100px" class="img-thumbnail image-preview">
-                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label class="form-label">صورة المدير</label>
+                                        <input type="file" class="form-control image" name="photo">
+                                    </div>
+                                    <div class="form-group">
+                                        <img src="{{asset('uploads/leaders/default.png')}}" width="100px" class="img-thumbnail image-preview">
+                                    </div>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label class="form-label">معلومات اكثر</label>
+                                    <input type="text" class="form-control" name="description" />
+                                </div>
+
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success">حفظ البيانات</button>

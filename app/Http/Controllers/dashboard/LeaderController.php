@@ -26,6 +26,7 @@ class LeaderController extends Controller
         $request->validate([
             'photo'=>'image',
             'name'=>'required',
+            'title'=>'required',
             'description'=>'required'
         ]);
         $data=$request->except('photo');
@@ -55,6 +56,7 @@ class LeaderController extends Controller
         $request->validate([
             'photo'=>'image',
             'name'=>'required',
+            'title'=>'required',
             'description'=>'required'
         ]);
         $data=$request->except(['_token','_method','photo']);
